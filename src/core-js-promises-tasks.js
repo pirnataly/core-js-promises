@@ -17,8 +17,15 @@
  * 0    => promise that will be fulfilled
  * 1    => promise that will be fulfilled
  */
-function getPromise(/* number */) {
-  throw new Error('Not implemented');
+function getPromise(number) {
+  const promise = new Promise(function abc(resolve, reject) {
+    if (number >= 0) {
+      resolve();
+    } else {
+      reject();
+    }
+  });
+  return promise;
 }
 
 /**
@@ -36,7 +43,6 @@ function getPromise(/* number */) {
 function getPromiseResult(/* source */) {
   throw new Error('Not implemented');
 }
-
 /**
  * Takes an array of promises and returns a promise that resolves with the value of the first successfully resolved promise From the given array.
  * If all promises in the array are rejected, it returns a promise that is rejected.
